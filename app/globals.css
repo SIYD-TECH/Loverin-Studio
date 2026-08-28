@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-darkroom: #14120f;
+  --color-darkroom-deep: #0e0c0a;
+  --color-paper: #f7f5f0;
+  --color-safelight: #9e2b25;
+  --color-silver: #8b8680;
+  --color-sepia: #b08968;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-darkroom: var(--color-darkroom);
+  --color-darkroom-deep: var(--color-darkroom-deep);
+  --color-paper: var(--color-paper);
+  --color-safelight: var(--color-safelight);
+  --color-silver: var(--color-silver);
+  --color-sepia: var(--color-sepia);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-schibsted);
+  --font-mono-cap: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-darkroom);
+  color: var(--color-paper);
+  font-family: var(--font-schibsted), sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
